@@ -1,6 +1,17 @@
 from collections import Counter
 class Solution:
     def smallestPalindrome(self, s: str) -> str:
+        #left half +(middle)+left half reverse
+        n=len(s)
+        leftlen=n//2
+        lefthalf=list(s[:leftlen])
+        lefthalf.sort()
+        lefthalf="".join(lefthalf)
+        if n%2==0:
+            return lefthalf+lefthalf[::-1]
+        else:
+            return lefthalf+s[leftlen]+lefthalf[::-1]     
+        """
         count=Counter(s)
         left=[]
         middle=""
@@ -10,4 +21,5 @@ class Solution:
             left.extend([ch]*(count[ch]//2))
         left.sort()
         left="".join(left)
-        return left+middle+left[::-1]        
+        return left+middle+left[::-1]   
+        """     
