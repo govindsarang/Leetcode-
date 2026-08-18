@@ -24,6 +24,7 @@ class Solution:
         if num < -2147483648:
             return -2147483648
         return num
+#bookmarked to go through and revise  how to convert string to integer without using int () function (PYTHON)
         
 
 
